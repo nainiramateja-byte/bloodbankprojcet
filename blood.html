@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeConnect Blood Bank</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="blood.js"></script>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     NAVBAR
+================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🩸 LifeConnect
+    </div>
+
+    <div class="nav-links">
+
+        <button
+            class="active"
+            onclick="showPage('home',this)">
+            Home
+        </button>
+
+        <button
+            onclick="showPage('services',this)">
+            Services
+            
+        </button>
+
+        <button
+            onclick="showPage('stock',this)">
+            Blood Stock
+        </button>
+
+        <button
+            onclick="showPage('donor',this)">
+            Donor
+        </button>
+
+        <button
+            onclick="showPage('request',this)">
+            Request
+        </button>
+
+        <button
+            onclick="showPage('about',this)">
+            About
+        </button>
+
+        <button
+            onclick="showPage('contact',this)">
+            Contact
+        </button>
+
+        <button
+            class="logout"
+            onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ==================================================
+     HOME PAGE
+================================================== -->
+
+<section id="home" class="page active">
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Donate Blood,<br>
+                Save Lives
+            </h1>
+
+            <p>
+                Welcome to LifeConnect Blood Bank.
+                Connect donors, hospitals and patients
+                through our digital blood bank platform.
+            </p>
+
+            <button
+                class="hero-btn"
+                onclick="showPageById('donor')">
+                Become a Donor
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="stats">
+
+            <div class="stat">
+                <h2>2500+</h2>
+                <p>Registered Donors</p>
+            </div>
+
+            <div class="stat">
+                <h2>1200+</h2>
+                <p>Lives Supported</p>
+            </div>
+
+            <div class="stat">
+                <h2>8</h2>
+                <p>Blood Groups</p>
+            </div>
+
+            <div class="stat">
+                <h2>24/7</h2>
+                <p>Support</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SERVICES PAGE
+================================================== -->
+
+<section id="services" class="page">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Our Services
+            </h2>
+
+            <p>
+                Click any frame to see full details
+            </p>
+
+        </div>
+
+        <div
+            class="cards"
+            id="serviceCards">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     BLOOD STOCK PAGE
+================================================== -->
+
+<section id="stock" class="page">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Blood Stock
+            </h2>
+
+            <p>
+                Click any blood group frame to see
+                the full-screen receipt
+            </p>
+
+        </div>
+
+
+        <div class="stock-grid">
+
+
+            <div
+                class="blood-card"
+                onclick="showReceipt('A+')">
+
+                <div class="blood-icon">
+                    A+
+                </div>
+
+                <h3>A Positive</h3>
+
+                <p class="available">
+                    ✓ Available
+                </p>
+
+            </div>
+
+
+            <div
+                class="blood-card"
+                onclick="showReceipt('A-')">
+
+                <div class="blood-icon">
+                    A-
+                </div>
+
+                <h3>A Negative</h3>
+
+                <p class="available">
+                    ✓ Available
+                </p>
+
+            </div>
+
+
+            <div
+                class="blood-card"
+                onclick="showReceipt('B+')">
+
+                <div class="blood-icon">
+                    B+
+                </div>
+
+                <h3>B Positive</h3>
+
+                <p class="available">
+                    ✓ Available
+                </p>
+
+            </div>
+
+
+            <div
+                class="blood-card"
+                onclick="showReceipt('B-')">
+
+                <div class="blood-icon">
+                    B-
+                </div>
+
+                <h3>B Negative</h3>
+
+                <p class="available">
+                    ✓ Available
+                </p>
+
+            </div>
+
+
+            <div
+                class="blood-card"
+                onclick="showReceipt('AB+')">
+
+                <div class="blood-icon">
+                    AB+
+                </div>
+
+                <h3>AB Positive</h3>
+
+                <p class="available">
+                    ✓ Available
+                </p>
+
+            </div>
+
+
+            <div
+                class="blood-card"
+                onclick="showReceipt('AB-')">
+
+                <div class="blood-icon">
+                    AB-
+                </div>
+
+                <h3>AB Negative</h3>
+
+                <p class="available">
+                    ✓ Available
+                </p>
+
+            </div>
+
+
+            <div
+                class="blood-card"
+                onclick="showReceipt('O+')">
+
+                <div class="blood-icon">
+                    O+
+                </div>
+
+                <h3>O Positive</h3>
+
+                <p class="available">
+                    ✓ Available
+                </p>
+
+            </div>
+
+
+            <div
+                class="blood-card"
+                onclick="showReceipt('O-')">
+
+                <div class="blood-icon">
+                    O-
+                </div>
+
+                <h3>O Negative</h3>
+
+                <p class="available">
+                    ✓ Available
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     DONOR PAGE
+================================================== -->
+
+<section id="donor" class="page">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Donor Registration
+            </h2>
+
+            <p>
+                Register as a blood donor
+            </p>
+
+        </div>
+
+
+        <div class="form-box">
+
+            <input
+                type="text"
+                id="donorName"
+                placeholder="Full Name">
+
+            <input
+                type="number"
+                id="donorAge"
+                placeholder="Age">
+
+            <input
+                type="tel"
+                id="donorPhone"
+                placeholder="Phone Number">
+
+            <select id="donorGroup">
+
+                <option value="">
+                    Select Blood Group
+                </option>
+
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+
+            </select>
+
+            <input
+                type="text"
+                id="donorCity"
+                placeholder="City">
+
+            <button
+                class="submit-btn"
+                onclick="registerDonor()">
+
+                Register as Donor
+
+            </button>
+
+            <p
+                id="donorMessage"
+                style="margin-top:15px;text-align:center;">
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     REQUEST PAGE
+================================================== -->
+
+<section id="request" class="page">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Blood Request
+            </h2>
+
+            <p>
+                Request blood for a patient
+            </p>
+
+        </div>
+
+
+        <div class="form-box">
+
+            <input
+                type="text"
+                id="patientName"
+                placeholder="Patient Name">
+
+            <input
+                type="text"
+                id="hospitalName"
+                placeholder="Hospital Name">
+
+            <select id="requestGroup">
+
+                <option value="">
+                    Select Blood Group
+                </option>
+
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+
+            </select>
+
+            <input
+                type="number"
+                id="units"
+                placeholder="Required Units">
+
+            <textarea
+                id="requestReason"
+                placeholder="Reason / Additional Details">
+            </textarea>
+
+            <button
+                class="submit-btn"
+                onclick="submitRequest()">
+
+                Submit Blood Request
+
+            </button>
+
+            <p
+                id="requestMessage"
+                style="margin-top:15px;text-align:center;">
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ABOUT PAGE
+================================================== -->
+
+<section id="about" class="page">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                About LifeConnect
+            </h2>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <h3>
+                Our Mission
+            </h3>
+
+            <p>
+                LifeConnect is a digital blood bank
+                management project designed to connect
+                donors, hospitals and patients.
+            </p>
+
+            <br>
+
+            <h3>
+                Our Services
+            </h3>
+
+            <p>
+                The website provides blood stock information,
+                donor registration, blood requests,
+                service information and contact details.
+            </p>
+
+            <br>
+
+            <h3>
+                Why Blood Donation Matters
+            </h3>
+
+            <p>
+                Blood is needed for many medical procedures,
+                emergencies and patient treatments.
+                Blood donation helps maintain blood supplies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     CONTACT PAGE
+================================================== -->
+
+<section id="contact" class="page">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Contact Us
+            </h2>
+
+            <p>
+                Get in touch with LifeConnect
+            </p>
+
+        </div>
+
+
+        <div class="contact-cards">
+
+            <div class="contact-card">
+
+                <h3>
+                    📞 Phone
+                </h3>
+
+                <p>
+                    +91 98765 43210
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    ✉ Email
+                </h3>
+
+                <p>
+                    support@lifeconnect.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    📍 Location
+                </h3>
+
+                <p>
+                    India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-box">
+
+            <input
+                type="text"
+                placeholder="Your Name">
+
+            <input
+                type="email"
+                placeholder="Your Email">
+
+            <textarea
+                placeholder="Your Message">
+            </textarea>
+
+            <button
+                class="submit-btn"
+                onclick="sendMessage()">
+
+                Send Message
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <p>
+        © 2026 LifeConnect Blood Bank |
+        HTML + CSS + JavaScript
+    </p>
+
+</footer>
+
+
+<!-- ==================================================
+     SERVICE DETAILS FULL PAGE
+================================================== -->
+
+<div id="detailModal">
+
+    <div class="detail-header">
+
+        <h2>
+            LifeConnect Details
+        </h2>
+
+        <button
+            class="back-btn"
+            onclick="closeDetails()">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+
+    <div class="detail-content">
+
+        <div class="detail-main">
+
+            <div class="detail-image-box">
+
+                <img
+                    id="detailImage"
+                    src=""
+                    alt="Service">
+
+            </div>
+
+
+            <div class="detail-text">
+
+                <h1 id="detailTitle">
+                </h1>
+
+                <p id="detailDescription">
+                </p>
+
+                <br>
+
+                <p id="detailExtra">
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="detail-boxes">
+
+            <div class="detail-box">
+
+                <h3>
+                    🩸 Why It Is Important
+                </h3>
+
+                <p id="detailWhy">
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <h3>
+                    ❤️ Who Can Help
+                </h3>
+
+                <p id="detailWho">
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <h3>
+                    🏥 Our Support
+                </h3>
+
+                <p id="detailSupport">
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="related-section">
+
+            <h2>
+                Related Images
+            </h2>
+
+            <div
+                class="related-images"
+                id="relatedImages">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     BLOOD RECEIPT FULL SCREEN
+================================================== -->
+
+<div id="receiptModal">
+
+    <div class="receipt-header">
+
+        <h2>
+            🩸 LifeConnect Blood Bank
+        </h2>
+
+        <button
+            class="back-btn"
+            onclick="closeReceipt()">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+
+    <div class="receipt">
+
+        <h1>
+            Blood Stock Receipt
+        </h1>
+
+        <p class="receipt-subtitle">
+            Blood Group Availability Details
+        </p>
+
+
+        <div
+            class="receipt-blood"
+            id="receiptBloodGroup">
+        </div>
+
+
+        <table class="receipt-table">
+
+            <tr>
+                <td>Receipt ID</td>
+                <td id="receiptId"></td>
+            </tr>
+
+            <tr>
+                <td>Blood Group</td>
+                <td id="receiptGroup"></td>
+            </tr>
+
+            <tr>
+                <td>Availability</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>Available Units</td>
+                <td id="receiptUnits"></td>
+            </tr>
+
+            <tr>
+                <td>Storage Status</td>
+                <td>Properly Stored</td>
+            </tr>
+
+            <tr>
+                <td>Request Status</td>
+                <td>Ready for Request</td>
+            </tr>
+
+            <tr>
+                <td>Date</td>
+                <td id="receiptDate"></td>
+            </tr>
+
+            <tr>
+                <td>Blood Bank</td>
+                <td>LifeConnect Blood Bank</td>
+            </tr>
+
+        </table>
+
+
+        <div class="status">
+
+            ✓ Blood Stock Available
+
+        </div>
+
+
+        <div class="note">
+
+            <b>Important Information</b>
+
+            <br><br>
+
+            This receipt displays the selected blood
+            group's availability information for this
+            project.
+
+            <br><br>
+
+            For an actual medical requirement,
+            blood availability should be confirmed
+            directly with the blood bank or hospital.
+
+        </div>
+
+
+        <button
+            class="print-btn"
+            onclick="window.print()">
+
+            🖨 Print Receipt
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
